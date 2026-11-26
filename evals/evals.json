@@ -1,0 +1,29 @@
+{
+  "skill_name": "tangerine-cat-diary-illustrations",
+  "evals": [
+    {
+      "id": 1,
+      "name": "plan-only",
+      "prompt": "这则日记只标了「约九月」：雨停后，屋檐只落了三滴水。弟弟把蓝碗接在下面，回头等我听。我想用黑墨速写，先聊一个构图，别出图也别改笔记。请交一个 JSON 对象，字段为 date、medium、anchor、composition。anchor 用一段原文。",
+      "expected_output": "一个构图方案，保留约略日期和点名的媒材；无图像和文件改动。",
+      "files": [],
+      "expectations": [
+        "保留约九月、黑墨速写和原文定位短句",
+        "只交付一个构图方案"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "insert-existing",
+      "prompt": "请把现成的附件「插画/碗底的光.png」按这个例子的格式插到日记副本里，紧跟「妹妹把蓝碗递给我」所在的正文段落，图注原样写成 *《碗底的光》｜据本篇日记创作，AI 绘制。* 。笔记里原有的属性、脚注和换段都保留。只交回修改后的完整 Markdown，原文件留作比对。",
+      "expected_output": "返回可直接使用的 Markdown 副本，新增一个内嵌图片和图注，其他内容逐字保留。",
+      "files": [
+        "fixtures/雨后的屋檐.md"
+      ],
+      "expectations": [
+        "仅在对应正文段落后插入指定附件与图注一次",
+        "属性、原文和脚注逐字保留"
+      ]
+    }
+  ]
+}

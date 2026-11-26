@@ -1,0 +1,4 @@
+interface:
+  display_name: "日记插画"
+  short_description: "从日记原文选取画面，沿用三种画法试画、批量配图并嵌入对应段落"
+  default_prompt: "用 $tangerine-cat-diary-illustrations 给这篇日记配一幅正文插画，画法沿用同作者已有样张。"
